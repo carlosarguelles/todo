@@ -1,0 +1,12 @@
+schema = 3
+
+[mod]
+  [mod."github.com/cespare/xxhash/v2"]
+    version = "v2.1.2"
+    hash = "sha256-YV9SmXDtmmgQylQUfrUgQLAPfqYexcHxegMBT+IX9qM="
+  [mod."github.com/dgryski/go-rendezvous"]
+    version = "v0.0.0-20200823014737-9f7001d12a5f"
+    hash = "sha256-n/7xo5CQqo4yLaWMSzSN1Muk/oqK6O5dgDOFWapeDUI="
+  [mod."github.com/go-redis/redis/v8"]
+    version = "v8.11.5"
+    hash = "sha256-KhVE/KR5oUCOQ42Hk7J7oa99A1Gu4+KJYknhgYI2G6w="
