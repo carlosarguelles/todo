@@ -33,7 +33,6 @@
             gomod2nix.packages.${system}.default
             go
             gopls
-            gofmt
           ];
         };
         nixosModules.default =
