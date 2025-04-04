@@ -29,8 +29,12 @@
           modules = ./gomod2nix.toml;
         };
         devShells.default = pkgs.mkShell {
-          buildInputs = [ gomod2nix.packages.${system}.default ];
-          packages = [ pkgs.go ];
+          buildInputs = with pkgs; [
+            gomod2nix.packages.${system}.default
+            go
+            gotools
+            gopls
+          ];
         };
         nixosModules.default =
           { lib, config, ... }:
