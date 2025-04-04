@@ -24,7 +24,7 @@
       {
         packages.default = pkgs.buildGoApplication {
           pname = name;
-          version = "1.0.1";
+          version = "1.0.2";
           src = ./.;
           modules = ./gomod2nix.toml;
         };

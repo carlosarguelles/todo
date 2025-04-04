@@ -36,7 +36,7 @@ func (r *RedisNodeRepository) GetAllNotes(ctx context.Context) ([]dom.Note, erro
 	}
 	var notes []dom.Note
 	for _, key := range keys {
-		if key == "id" {
+		if key == fmt.Sprintf("%s:%s", r.key, key) {
 			continue
 		}
 		note, err := r.cmd.Get(ctx, key).Result()
