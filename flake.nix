@@ -32,8 +32,8 @@
           buildInputs = with pkgs; [
             gomod2nix.packages.${system}.default
             go
-            gotools
             gopls
+            gofmt
           ];
         };
         nixosModules.default =
