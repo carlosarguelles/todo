@@ -65,8 +65,11 @@
             };
 
             config = lib.mkIf cfg.enable {
-              environment.variables.TODO_KEY = cfg.key;
-              environment.systemPackages = [ cfg.package ];
+              environment.systemPackages = [
+                (pkgs.writeShellScriptBin "todocli" ''
+                  export TODO_KEY="${cfg.key}"; ${cfg.package}/bin/todocli $@
+                '')
+              ];
               systemd.services.${name} = {
                 wantedBy = [ "multi-user.target" ];
                 serviceConfig = {
